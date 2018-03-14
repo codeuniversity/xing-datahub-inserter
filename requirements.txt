@@ -1,0 +1,23 @@
+aiohttp==3.0.9
+async-timeout==2.0.1
+attrs==17.4.0
+certifi==2018.1.18
+chardet==3.0.4
+confluent-kafka==0.11.0
+docopt==0.6.2
+future==0.16.0
+hdfs==2.1.0
+-e git+https://github.com/codeuniversity/xing_datahub_hive_handler@ddddfe81103a3f77acbfa633880d80e2ed2eabf0#egg=hive_handler
+idna==2.6
+idna-ssl==1.0.1
+multidict==4.1.0
+prometheus-client==0.1.1
+protobuf==3.5.2
+PyHive==0.5.1
+requests==2.18.4
+sasl==0.2.1
+six==1.11.0
+thrift==0.11.0
+thrift-sasl==0.3.0
+urllib3==1.22
+yarl==1.1.1
