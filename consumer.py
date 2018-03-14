@@ -52,6 +52,7 @@ def handle_message(msg):
         print(msg.topic(), ' not handled')
 
 if __name__ == '__main__':
+    hive_handler.init()
     start_http_server(3002)
 
     running = True
