@@ -15,3 +15,4 @@ librdkafka-linux-install:
 
 librdkafka-mac-install:
 	brew install librdkafka
+
