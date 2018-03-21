@@ -10,7 +10,7 @@ install:
 - make dep
 before_script:
 - docker-compose -f docker-compose.test.yml up -d
-- sleep 210
+- sleep 240
 script:
 - PYTHON_PATH=/home/travis/virtualenv/python3.6.3/bin/python python inserter_test.py
 - docker-compose -f docker-compose.test.yml down
