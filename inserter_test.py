@@ -19,7 +19,7 @@ base_url = 'http://localhost:3003/'
 class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
-    path = '~/tmp/datahub-data/'
+    path = '~/datahub-data/'
     filename = 'inserter-test'
     try:
       os.mkdir(path)
