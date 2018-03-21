@@ -20,9 +20,10 @@ class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
     path = '~/datahub-data/'
+    my_dir = os.path.expanduser(path)
     filename = 'inserter-test'
     try:
-      os.mkdir(path)
+      os.mkdir(my_dir)
     except FileExistsError:
       print('Path already exists')
     f = open(path+filename , mode='w')
