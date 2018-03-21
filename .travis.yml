@@ -4,9 +4,8 @@ python:
 services:
 - docker
 install:
-- curl -L https://github.com/edenhill/librdkafka/archive/v0.9.2-RC1.tar.gz | tar xzf -
+- curl -L https://github.com/edenhill/librdkafka/archive/v0.11.3.tar.gz | tar xzf -
 - cd librdkafka-0.9.2-RC1/; ./configure --prefix=/usr; make -j; sudo make install
-- sudo apt install librdkafka-dev
 - cd ..
 - make dep
 before_script:
