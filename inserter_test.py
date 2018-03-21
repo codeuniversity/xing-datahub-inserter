@@ -19,13 +19,18 @@ base_url = 'http://localhost:3003/'
 class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
-    path = '~/tmp/datahub-data/inserter-test'
-    f = open(path , mode='w')
+    path = '~/tmp/datahub-data/'
+    filename = 'inserter-test'
+    try:
+      os.mkdir(path)
+    except FileExistsError
+      print('Path already exists')
+    f = open(path+filename , mode='w')
     f.write('42 \n 65')
     f.close()
     info = protocol_pb2.WrittenCSVInfo()
-    info.filepath = path
-    info.filename = 'inserter-test'
+    info.filepath = path + filename
+    info.filename = filename
     info.recordType = 'target_users'
     msg = info.SerializeToString()
     producer.produce('written_files', msg)
