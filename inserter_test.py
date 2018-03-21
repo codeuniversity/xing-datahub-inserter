@@ -27,7 +27,7 @@ class EndpointTestCase(unittest.TestCase):
     except FileExistsError:
       print('Path already exists')
     f = open(my_dir+filename , mode='w')
-    f.write('42 \n 65')
+    f.write('42;\n65;')
     f.close()
     info = protocol_pb2.WrittenCSVInfo()
     info.filepath = my_dir + filename
