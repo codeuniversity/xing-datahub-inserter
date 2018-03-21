@@ -23,7 +23,7 @@ class EndpointTestCase(unittest.TestCase):
     filename = 'inserter-test'
     try:
       os.mkdir(path)
-    except FileExistsError
+    except FileExistsError:
       print('Path already exists')
     f = open(path+filename , mode='w')
     f.write('42 \n 65')
