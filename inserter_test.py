@@ -35,7 +35,7 @@ class EndpointTestCase(unittest.TestCase):
     info.recordType = 'target_users'
     msg = info.SerializeToString()
     producer.produce('written_files', msg)
-    time.sleep(20)
+    time.sleep(30)
     hash_arr = hive_handler.fetch_target_users()
     self.assertEqual(len(hash_arr),2)
     self.assertDictEqual(hash_arr[0], {'user_id':42})
