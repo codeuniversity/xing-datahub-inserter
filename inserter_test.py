@@ -21,7 +21,7 @@ class EndpointTestCase(unittest.TestCase):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
     path = '~/datahub-data/'
     my_dir = os.path.expanduser(path)
-    filename = 'inserter-test'
+    filename = 'inserter_test'
     try:
       os.mkdir(my_dir)
     except FileExistsError:
