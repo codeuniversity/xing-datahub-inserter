@@ -19,18 +19,19 @@ base_url = 'http://localhost:3003/'
 class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
-    path = '/datahub-data/inserter_test'
+    local_path = 'datahub-data/'
+    remote_path = '/datahub-data/inserter_test/'
     filename = 'inserter_test'
     try:
-      os.makedirs(path)
+      os.makedirs(local_path)
     except FileExistsError:
       print('Path already exists')
-    f = open(path+filename , mode='w')
+    f = open(local_path + filename , mode='w')
     f.write('42;\n65;')
     f.close()
-    hdfs_helpers.put_in_hdfs(path+filename, path+filename)
+    hdfs_helpers.put_in_hdfs(remote_path+filename, local_path+filename)
     info = protocol_pb2.WrittenCSVInfo()
-    info.filepath = path + filename
+    info.filepath = remote_path + filename
     info.filename = filename
     info.recordType = 'target_users'
     msg = info.SerializeToString()
