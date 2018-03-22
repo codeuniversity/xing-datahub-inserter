@@ -20,10 +20,10 @@ base_url = 'http://localhost:3003/'
 class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
     producer = Producer({'bootstrap.servers': 'localhost:9092'})
-    path = '/datahub-data/'
+    path = '/datahub-data/inserter_test'
     filename = 'inserter_test'
     try:
-      os.mkdir(path)
+      os.makedirs(path)
     except FileExistsError:
       print('Path already exists')
     f = open(path+filename , mode='w')
