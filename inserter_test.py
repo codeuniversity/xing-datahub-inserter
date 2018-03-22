@@ -23,7 +23,7 @@ class EndpointTestCase(unittest.TestCase):
     path = '/datahub-data/'
     filename = 'inserter_test'
     try:
-      os.mkdir(my_dir)
+      os.mkdir(path)
     except FileExistsError:
       print('Path already exists')
     f = open(path+filename , mode='w')
