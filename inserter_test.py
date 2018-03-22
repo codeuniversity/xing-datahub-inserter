@@ -1,4 +1,3 @@
-import aiohttp
 import unittest
 import json
 import requests
