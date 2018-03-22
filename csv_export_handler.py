@@ -14,7 +14,8 @@ class ExportHandler(object):
       print(err)
 
   def _handle_tables(self, filename, path):
-    only_path_components = path.split('/')[:-1]
+    in_user_path = path.replace('/user/cloudera', '')
+    only_path_components = in_user_path.split('/')[:-1]
     only_path = '/'.join(only_path_components)
     hive_handler.create_csv_table(filename, only_path, self.schema_string)
     hive_handler.insert_from_table(self.name, filename)
