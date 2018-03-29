@@ -8,13 +8,6 @@ import hive_handler
 import hdfs_helpers
 from build import protocol_pb2
 from confluent_kafka import Producer
-try:
-  python_path = os.environ['PYTHON_PATH']
-except KeyError:
-  python_path = '{}/env/bin/python'.format(os.getcwd())
-
-proc = subprocess.Popen([python_path, 'consumer.py'], preexec_fn=os.setsid)
-base_url = 'http://localhost:3003/'
 
 class EndpointTestCase(unittest.TestCase):
   def test_insertion(self):
@@ -43,5 +36,3 @@ class EndpointTestCase(unittest.TestCase):
     self.assertDictEqual(hash_arr[1], {'user_id':65})
 time.sleep(3)
 unittest.main()
-os.killpg(os.getpgid(pro.pid), signal.SIGTERM)
-time.sleep(3)
