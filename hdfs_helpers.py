@@ -11,6 +11,8 @@ def put_in_hdfs(hdfs_path, local_path):
                   temp_dir='/tmp/{}'.format(local_path))
     print('done!')
 
-
+def remove_in_hdfs(hdfs_path):
+    client = InsecureClient('http://quickstart.cloudera:50070', user='cloudera')
+    client.delete(hdfs_path, recursive=True)
 def test():
     put_in_hdfs('/users/test', 'data/users.csv')

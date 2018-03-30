@@ -20,4 +20,5 @@ class ExportHandler(object):
     hive_handler.create_csv_table(filename, only_path, self.schema_string)
     hive_handler.insert_from_table(self.name, filename)
     hive_handler.drop_table(filename)
+    hdfs_helpers.remove_in_hdfs(only_path)
 
