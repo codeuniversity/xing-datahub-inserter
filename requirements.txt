@@ -19,5 +19,5 @@ sasl==0.2.1
 six==1.11.0
 thrift==0.11.0
 thrift-sasl==0.3.0
-urllib3==1.22
+urllib3==1.24.2
 yarl==1.1.1
